@@ -1,0 +1,354 @@
+# Configfile for make-namedb.sh
+#
+# 21/03/2010: magnus@strahlert.net
+#             first draft
+# 25/03/2010: magnus@strahlert.net
+#             final version
+#
+#
+# Line starting with DOMAIN will define the domainname for the hosts
+# on the following lines until another DOMAIN definition is found
+#
+# Line starting with HOST willdefine a host for the given domain.
+# Arguments takes the following form; 
+#  <iaddr> : <name> : <mtype> : <os> : <protocol> :
+#
+# <iaddr>    contains the IP adress
+# <name>     contains the hostname. This can be comma separated in 
+#            order to create CNAMES. The first given name will be
+#            the A name and the remainder the CNAMES.
+# <mtype>    the first entry of HNAME. Usually hardware. If none is
+#            given, it will be set to UNKNOWN.
+# <os>       the second entry of HNAME. Usually software. If none
+#            is given, it will be set to UNKNOWN.
+# <protocol> not used
+#
+DOMAIN : docker
+HOST : 192.168.0.64 : webdav : : : :
+HOST : 192.168.0.64 : portainer01 : : : :
+HOST : 192.168.0.64 : plex : : : :
+HOST : 192.168.0.64 : elk : : : :
+HOST : 192.168.0.64 : gitlab : : : :
+HOST : 192.168.0.64 : semaphore : : : :
+HOST : 192.168.0.64 : vaultwarden : : : :
+HOST : 192.168.0.64 : snipeit : : : :
+HOST : 192.168.0.68 : rtorrent,flood : : : :
+HOST : 192.168.0.68 : portainer02 : : : :
+HOST : 192.168.0.75 : mm,mattermost : : : :
+DOMAIN : vsphere
+HOST : 192.168.0.100 : vcenter : : : : 00:0c:29:42:6f:c7
+HOST : 192.168.0.101 : esxi-vh1 : : : : 52:54:00:6b:87:f4
+HOST : 192.168.0.102 : esxi-vh2 : : : : 52:54:00:6f:f8:a8
+HOST : 192.168.0.103 : esxi-vh3 : : : :
+HOST : 192.168.0.110 : truenas : : : : 52:54:00:ef:a1:b3
+HOST : 192.168.0.76 : openldap : : : : 
+DOMAIN : home.strahlert.net
+#HOST : 192.168.1.254 : dlink655 : : : : 00:1B:11:60:7A:44
+#HOST : 192.168.2.1 : dlink655-gw : : : :
+HOST : 192.168.10.254 : tl-wr941nd : : : : 64:66:b3:57:87:98
+HOST : 192.168.2.1 : tl-wr941nd-gw : : : : 64:66:b3:57:87:98
+HOST : 192.168.2.2 : tl-wa830re,ap : : : : a0:f3:c1:b5:7b:bd
+#HOST : 192.168.2.2 : dhcp002 : : : :
+HOST : 192.168.2.3 : mst-iPhone : : : : f4:31:c3:bf:64:43
+HOST : 192.168.2.4 : msts-iPad : : : : 54:e4:3a:8f:98:71
+HOST : 192.168.2.5 : dhcp005 : : : :
+HOST : 192.168.2.6 : dhcp006 : : : :
+HOST : 192.168.2.7 : appletv : : : : d0:03:4b:e7:e1:73
+HOST : 192.168.2.8 : dhcp008 : : : :
+HOST : 192.168.2.8 : atv3,apple-tv,apple-tv3 : : : : 98:d6:bb:22:99:42
+HOST : 192.168.2.9 : sonos01,sonos-vardagsrummet : : : : 00:0e:58:a8:08:84
+HOST : 192.168.2.10 : sonos02,sonos-sovrummet : : : : b8:e9:37:e4:e5:48
+HOST : 192.168.2.11 : sonos03,sonos-koket : : : : 94:9f:3e:85:f1:ea
+HOST : 192.168.2.12 : latitude2,e5410 : : : : 00:27:10:43:f4:ac
+HOST : 192.168.2.13 : latitude3,e7440 : : : : 0c:8b:fd:31:c8:f1
+HOST : 192.168.2.14 : iphone13mini : : : : 06:a9:10:11:44:f0
+HOST : 192.168.2.15 : dhcp015 : : : :
+HOST : 192.168.2.15 : rpi05-wifi : : : : b8:27:eb:a4:80:cd
+#HOST : 192.168.2.16 : nuc03 : : : : 50:84:92:86:d2:bf
+HOST : 192.168.2.16 : nuc03 : : : : 88:ae:dd:04:65:d3
+HOST : 192.168.2.16 : dhcp016 : : : :
+HOST : 192.168.2.17 : dhcp017 : : : :
+HOST : 192.168.2.18 : dhcp018 : : : :
+HOST : 192.168.2.19 : dhcp019 : : : :
+HOST : 192.168.2.20 : dhcp020 : : : :
+# HOST : 192.168.2.21 : appletv3 : : : : 98:d6:bb:22:99:42
+# HOST : 192.168.2.12 : sonos : : : : 00:0e:58:a8:08:84
+HOST : 192.168.2.250 : tradlos-gw : : : : a0:c9:a0:67:a0:2f
+HOST : 192.168.2.251 : ubiquiti-ap : : : : f0:9f:c2:f3:9e:7d
+#HOST : 192.168.0.2 : dustball,mysql : : : : bc:ae:c5:a9:6f:a1
+#HOST : 192.168.0.3 : laser : : : : 00:c0:00:00:00:00
+HOST : 192.168.0.3 : laser : : : : f0:92:1c:8d:f2:d2
+# HOST : 192.168.0.4 : rutger,svarten,gw : : : : e0:cb:4e:c2:63:0c
+# HOST : 192.168.0.4 : rutger,svarten,gw : : : : 00:22:b0:00:0c:29
+# HOST : 192.168.0.4 : rutger,svarten,gw : : : : 00:a0:d2:a4:6f:bf
+# HOST : 192.168.0.4 : rutger,svarten,gw : : : : 00:e0:4c:69:14:35
+HOST : 192.168.0.4 : rutger,svarten,gw : : : : 5c:d9:98:ae:22:1c
+#HOST : 192.168.0.5 : inwin,desktop : : : : 00:22:b0:00:0c:9a
+HOST : 192.168.0.5 : esxi-v51 : : : : 00:0c:29:ed:54:c8
+HOST : 192.168.0.6 : aspire : : : : 00:c0:9f:31:53:f5
+#HOST : 192.168.0.7 : coolmaster,www,mail,dns,ldap : : : : 00:1b:fc:19:bd:bf
+##HOST : 192.168.0.7 : coolmaster,www,ldap : : : : 00:1b:fc:19:bd:bf
+#HOST : 192.168.0.8 : sempron : : : : 00:15:f2:22:8f:07
+HOST : 192.168.0.8 : sempron : : : : 00:40:f4:b8:d9:37
+#HOST : 192.168.0.9 : ps3 : : : : 00:1d:0d:bb:0d:93
+HOST : 192.168.0.9 : ps3 : : : : fc:0f:e6:02:d9:b2
+HOST : 192.168.0.10 : bdp3000,bluray : : : : 00:1c:50:10:b6:40
+HOST : 192.168.0.11 : latitude,d620 : : : : 00:18:8b:cc:a2:72
+#HOST : 192.168.0.12 : fractal : : : : 8c:89:a5:65:48:ef
+HOST : 192.168.0.12 : fractal : : : : 68:05:ca:12:97:3a
+#HOST : 192.168.0.13 : nasse,nas : : : : 68:05:ca:04:dc:14
+#HOST : 192.168.0.13 : nasse,nas : : : : b8:a3:86:7b:e6:cc
+HOST : 192.168.0.13 : nasse,nas : : : : c8:60:00:55:a8:1f
+#HOST : 192.168.0.14 : atv3,apple-tv,apple-tv3 : : : : 98:d6:bb:22:99:42
+HOST : 192.168.0.15 : esxi : : : : 
+HOST : 192.168.0.16 : open : : : : 00:19:db:b0:25:8e
+HOST : 192.168.0.17 : silverstone : : : : 68:05:ca:12:7b:47
+#HOST : 192.168.0.18 : raspberrypi01 : : : : b2:13:57:cf:b4:f0
+HOST : 192.168.0.18 : raspberrypi01,rpi01 : : : : b8:27:eb:e8:3f:41
+##HOST : 192.168.0.19 : esxi2 : : : : 90:e2:ba:35:e2:55
+#HOST : 192.168.0.19 : esxi2 : : : : 68:05:ca:12:97:49
+##HOST : 192.168.0.20 : freenas : : : : 00:0c:29:43:6c:c9 # vmxnet3
+#HOST : 192.168.0.20 : freenas : : : : 00:0c:29:43:6c:dd
+HOST : 192.168.0.21 : tvout-client : : : : 00:0c:29:fb:e3:4d
+HOST : 192.168.0.22 : raspberrypi02,rpi02 : : : : b8:27:eb:0d:65:83
+#HOST : 192.168.0.51 : kvm-v1 : : : : 00:1a:4a:16:01:00
+HOST : 192.168.0.51 : kvm-v1 : : : : 52:54:00:48:cc:7e
+#HOST : 192.168.0.51 : inwin-v1,winxp-vm : : : : 08:00:27:5a:04:b6
+HOST : 192.168.0.52 : kvm-v2 : : : : 00:1a:4a:16:01:02
+HOST : 192.168.0.53 : kvm-v3 : : : : 52:54:00:b4:fd:cc
+HOST : 192.168.0.54 : kvm-v4,wiki : : : : 52:54:00:2c:2d:68
+HOST : 192.168.0.55 : kvm-v5,gluster-a : : : : 52:54:00:a8:5e:d4
+HOST : 192.168.0.56 : kvm-v6,gluster-q : : : : 52:54:00:a9:ac:fb
+#HOST : 192.168.0.57 : kvm-v7,awx : : : : 52:54:00:2d:bc:c8
+HOST : 192.168.0.57 : kvm-v7,vnc : : : : 52:54:00:ba:6c:ea
+HOST : 192.168.0.58 : kvm-v8,librenms : : : : 52:54:00:be:8e:54
+HOST : 192.168.0.59 : kvm-v9,phpmyadmin,customer01,customer02 : : : : 52:54:00:40:00:dd
+HOST : 192.168.0.60 : kvm-v10,pf : : : : 52:54:00:cb:dc:ca
+HOST : 192.168.0.61 : kvm-v11,smb4,samba,dc : : : : 52:54:00:10:7c:15
+HOST : 192.168.0.62 : kvm-v12 : : : : 52:54:00:fb:4d:5a
+HOST : 192.168.0.63 : kvm-v13 : : : : 52:54:00:d4:bd:56
+HOST : 192.168.0.64 : kvm-v14 : : : : 52:54:00:6d:51:db
+HOST : 192.168.0.65 : kvm-v15,elk,logserv : : : : 52:54:00:a6:64:90
+HOST : 192.168.0.66 : kvm-v16,x11vnc : : : : 52:54:00:44:9e:50
+HOST : 192.168.0.67 : kvm-v17 : : : : 52:54:00:b3:3a:92
+HOST : 192.168.0.68 : kvm-v18 : : : : 52:54:00:8a:32:33
+HOST : 192.168.0.69 : kvm-v19,nagios : : : : 52:54:00:c1:3c:6a
+HOST : 192.168.0.70 : kvm-v20,okd : : : : 52:54:00:1a:2d:40
+HOST : 192.168.0.71 : kvm-v21,flask,mdnsedit : : : : 52:54:00:45:70:33
+HOST : 192.168.0.72 : kvm-v22,pdns : : : : 52:54:00:46:71:34
+HOST : 192.168.0.73 : kvm-v23,nfs02 : : : : 52:54:00:15:a8:c8
+HOST : 192.168.0.74 : kvm-v24,docker-registry : : : : 52:54:00:82:f7:f1
+HOST : 192.168.0.75 : kvm-v25,mm,mattermost : : : : 52:54:00:8e:e7:e1
+HOST : 192.168.0.76 : kvm-v26,openldap : : : : 52:54:00:4f:18:e4
+HOST : 192.168.0.77 : kvm-v27,openldap-rhel9 : : : : 52:54:00:fc:9a:db
+HOST : 192.168.0.78 : kvm-v28,mfs-master01,mfsmaster : : : : 52:54:00:4b:9c:e6
+HOST : 192.168.0.79 : kvm-v29,opennebula,one,one-fe : : : : 52:54:00:fd:b4:0e
+HOST : 192.168.0.91 : kvm02h01 : : : : 52:54:00:61:84:44
+HOST : 192.168.0.92 : kvm02h02 : : : : 52:54:00:91:8a:9d
+HOST : 192.168.0.93 : proxmox01,pve01 : : : : 52:54:00:e7:38:dd
+HOST : 192.168.0.98 : kvm-v23n : : : : 52:54:00:2e:48:c4
+HOST : 192.168.0.97 : kvm-v3n : : : : 52:54:00:f7:c1:0e
+HOST : 192.168.0.96 : kvm-v4n : : : : 52:54:00:a0:fb:45
+#HOST : 192.168.0.52 : inwin-v2,freebsd-vm : : : : 08:00:27:a1:02:0e
+#HOST : 192.168.0.62 : inwin-v2em1 : : : : 08:00:27:7a:17:46
+#HOST : 192.168.0.53 : inwin-v3,freenas-vm : : : : 08:00:27:2b:08:31
+#HOST : 192.168.0.21 : dustball-v1,jail-vm : : : : 08:00:27:7c:0a:51
+#HOST : 192.168.0.22 : dustball-v2,freebsd2-vm : : : : 08:00:27:53:6f:09
+HOST : 192.168.0.23 : esxi03 : : : : 08:00:27:95:00:2f
+#HOST : 192.168.0.24 : dustball-v4 : : : : 08:00:27:18:14:75
+HOST : 192.168.0.24 : raspberrypi03,rpi03 : : : :
+HOST : 192.168.0.124 : dustball-v4em1 : : : : 08:00:27:fb:ee:7e
+#HOST : 192.168.0.25 : dustball-v5 : : : : 08:00:27:57:01:c1
+HOST : 192.168.0.25 : raspberrypi04,rpi04,retropie,retropi : : : : b8:27:eb:51:8b:50
+#HOST : 192.168.0.26 : ,esxi04.s2.strahlert.net. : : : : 
+#HOST : 192.168.0.26 : dustball-v6 : : : : 08:00:27:6b:be:97
+HOST : 192.168.0.126 : dustball-v6em1 : : : : 08:00:27:9a:36:52
+HOST : 192.168.0.27 : raspberrypi05,rpi05 : : : : b8:27:eb:f1:d5:98
+HOST : 192.168.0.28 : raspberrypi06,rpi06 : : : : b8:27:eb:0c:b5:b8
+#HOST : 192.168.0.28 : dustball-v8,xubuntu-vm : : : : 08:00:27:a9:45:42
+#HOST : 192.168.0.29 : dustball-v9,winxp2-vm : : : : 08:00:27:89:df:74
+HOST : 192.168.0.29 : kvm01 : : : :
+#HOST : 192.168.0.30 : dustball-v10 : : : : 
+HOST : 192.168.0.30 : engine : : : :
+#HOST : 192.168.122.26 : engine : : : :
+#HOST : 192.168.0.31 : dustball-v11 : : : : 08:00:27:cc:2a:13
+HOST : 192.168.0.31 : kvm02 : : : : 
+#HOST : 192.168.0.32 : dustball-v12,teamspeak-vm : : : : 08:00:27:80:e2:45
+HOST : 192.168.0.32 : nuc,nuc01,ntp1 : : : : 94:c6:91:1f:51:4d
+#HOST : 192.168.0.33 : dustball-v13,debian-vm : : : : 08:00:27:75:d4:f3
+#HOST : 192.168.0.33 : kvm04 : : : :
+#HOST : 192.168.0.34 : dustball-v14 : : : : 
+HOST : 192.168.0.34 : nuc02,ntp2 : : : :
+#HOST : 192.168.0.35 : dustball-v15 : : : : 08:00:27:06:5d:b9
+HOST : 192.168.0.35 : kvm03 : : : : 
+HOST : 192.168.0.36 : dustball-v16 : : : : 08:00:27:a3:95:4a
+HOST : 192.168.0.37 : dustball-v17 : : : : 
+HOST : 192.168.0.38 : dustball-v18,smbpdc-vm : : : : 08:00:27:eb:6d:5e
+HOST : 192.168.0.39 : dustball-v19,winxp3-vm : : : : 08:00:27:f4:07:0f
+#HOST : 192.168.0.40 : dustball-v20,appgate-vm : : : : 08:00:27:f7:03:2b
+#HOST : 192.168.0.41 : dustball-v21,syslog-vm,logserv : : : : 08:00:27:fa:c8:2e
+HOST : 192.168.0.42 : dustball-v22 : : : : 08:00:27:97:29:44
+HOST : 192.168.0.43 : dustball-v23 : : : :
+#HOST : 192.168.56.44 : dustball-v24,snort-vm : : : : 08:00:27:29:b3:e3
+#HOST : 192.168.0.45 : dustball-v25 : : : : 
+HOST : 192.168.0.46 : dustball-v26 : : : : 08:00:27:4a:e5:0f
+#HOST : 192.168.0.47 : dustball-v27,win7-vm : : : : 08:00:27:39:db:84
+#HOST : 192.168.0.48 : dustball-v28,teamspeak3-vm : : : : 08:00:27:07:42:ca
+HOST : 192.168.0.49 : dustball-v29 : : : : 08:00:27:56:04:0b
+HOST : 192.168.57.51 : dustball-v31 : : : : 08:00:27:90:4e:2a
+#HOST : 192.168.0.52 : dustball-v32 : : : : 08:00:27:ba:a3:70
+#HOST : 192.168.0.53 : dustball-v33 : : : : 08:00:27:65:ef:b1
+#HOST : 192.168.0.101 : freenasse : : : :
+#HOST : 192.168.0.102 : bacula : : : :
+HOST : 192.168.0.124 : esxi-v4 : : : : 00:0c:29:dc:e2:28
+HOST : 192.168.0.125 : esxi-v5,freebsd-update,pkg : : : : 00:0c:29:3e:17:92
+HOST : 192.168.0.126 : esxi-v6 : : : :
+HOST : 192.168.0.128 : esxi-v8,xubuntu-vm : : : : 00:0c:29:1a:18:48
+HOST : 192.168.0.129 : esxi-v9 : : : : 00:0c:29:2e:ec:6b
+HOST : 192.168.0.136 : esxi-v16 : : : : 00:0c:29:6f:5e:de
+#HOST : 192.168.0.141 : esxi-v21,syslog-vm,logserv : : : : 00:0c:29:03:bf:6e
+#HOST : 192.168.0.141 : esxi-v21,syslog-vm,logserv : : : : 00:0c:29:93:42:5d
+HOST : 192.168.0.141 : esxi-v21,syslog-vm : : : : 52:54:00:77:bc:17
+#HOST : 192.168.56.44 : esxi-v24,snort-vm : : : : 00:0c:29:37:7a:61
+HOST : 192.168.56.44 : esxi-v24,snort-vm : : : : 52:54:00:e9:d6:06
+HOST : 192.168.0.146 : esxi-v26,dns2,ntp3 : : : : 00:0c:29:84:bd:e6
+#HOST : 192.168.0.148 : esxi-v28,teamspeak3-vm : : : : 00:0c:29:f3:fa:81
+HOST : 192.168.0.148 : esxi-v28,teamspeak3-vm : : : : 52:54:00:c7:ea:03
+HOST : 192.168.0.152 : esxi-v32 : : : : 00:0c:29:c4:a2:65
+HOST : 192.168.0.153 : esxi-v33 : : : : 00:0c:29:f5:6e:75
+#HOST : 192.168.0.154 : esxi-v34 : : : : 00:0c:29:bd:2f:ce
+HOST : 192.168.0.154 : esxi-v34,fulgaz : : : : 52:54:00:5f:21:c2
+#HOST : 192.168.0.155 : esxi-v35 : : : : 00:0c:29:8e:26:f8
+HOST : 192.168.0.155 : esxi-v35 : : : : 52:54:00:7a:8d:3d
+#HOST : 192.168.0.156 : esxi-v36,smtp,mail,coolmaster : : : : 00:0c:29:d1:1d:cf
+HOST : 192.168.0.156 : esxi-v36,smtp,mail,coolmaster : : : : 52:54:00:c1:fa:b0
+#HOST : 192.168.0.156 : esxi-v36,smtp,mail : : : : 00:0c:29:d1:1d:cf
+HOST : 192.168.0.158 : esxi-v38,argus-vm : : : : 00:0c:29:a7:63:11
+#HOST : 192.168.0.159 : esxi-v39,win7-vm : : : : 00:0c:29:5a:24:f6
+HOST : 192.168.0.159 : esxi-v39,win7-vm : : : : 52:54:00:8d:75:08
+HOST : 192.168.0.160 : esxi-v40 : : : : 00:0c:29:54:f1:4e
+HOST : 192.168.0.161 : esxi-v41 : : : : 00:0c:29:24:a1:e2
+#HOST : 192.168.0.162 : esxi-v42 : : : : 00:0c:29:23:00:be
+HOST : 192.168.0.162 : esxi-v42 : : : : 52:54:00:76:6d:38
+HOST : 192.168.0.163 : esxi-v43 : : : : 00:0c:29:a1:b1:1b
+HOST : 192.168.0.164 : esxi-v44 : : : : 00:0c:29:bd:d2:bd
+HOST : 192.168.0.165 : esxi-v45 : : : : 00:0c:29:28:eb:3b
+HOST : 192.168.0.166 : esxi-v46 : : : : 00:0c:29:8a:d0:a3
+#HOST : 192.168.0.167 : esxi-v47 : : : : 00:0c:29:ec:09:1b
+HOST : 192.168.0.167 : esxi-v47 : : : : 52:54:00:f1:4c:a4
+#HOST : 192.168.0.170 : esxi-v50 : : : : 00:0c:29:a9:9e:e0
+HOST : 192.168.0.170 : esxi-v50 : : : : 52:54:00:7d:fe:92
+#HOST : 192.168.0.172 : esxi-v52 : : : : 00:0c:29:1f:97:75
+#HOST : 192.168.0.172 : esxi-v52 : : : : 52:54:00:67:f6:42
+HOST : 192.168.0.172 : esxi-v52 : : : : 52:54:00:b9:31:c9
+HOST : 192.168.0.173 : esxi-v53,splunk-vm,splunk : : : : 00:0c:29:24:0f:a6
+HOST : 192.168.0.174 : esxi-v54,snorby-vm : : : : 00:0c:29:f4:a3:db
+HOST : 192.168.0.175 : esxi-v55 : : : : 
+HOST : 192.168.0.176 : esxi-v56,plex-vm : : : : 00:0c:29:02:05:6f
+HOST : 192.168.0.179 : esxi-v59,fw-mgmt-r : : : : 
+HOST : 192.168.0.180 : esxi-v60 : : : : 
+HOST : 192.168.0.181 : esxi-v61,observium : : : : 
+HOST : 192.168.0.182 : esxi-v62,webdav : : : :
+HOST : 192.168.0.183 : esxi-v63,canary : : : :
+HOST : 192.168.0.184 : esxi-v64,ansible : : : :
+HOST : 192.168.0.185 : esxi-v65,icinga : : : :
+HOST : 192.168.0.186 : esxi-v66,puppetmaster : : : :
+HOST : 192.168.0.187 : esxi-v67,virb-vm : : : : 00:0c:29:f4:78:07
+#HOST : 192.168.0.188 : esxi-v68,redmine : : : : 00:0c:29:38:97:33
+HOST : 192.168.0.188 : esxi-v68,redmine : : : : 52:54:00:cb:32:be
+HOST : 192.168.0.189 : esxi-v69 : : : : 00:0c:29:d2:a5:61
+HOST : 192.168.0.192 : esxi-v69-2 : : : : 52:54:00:a3:b3:dd
+#HOST : 192.168.0.190 : esxi-v70,awx : : : : 00:0c:29:26:2e:4a
+HOST : 192.168.0.190 : esxi-v70,awx : : : : 52:54:00:2d:bc:c8
+#HOST : 192.168.0.190 : esxi-v70,awx : : : : 52:54:00:48:8b:d4
+HOST : 192.168.0.191 : esxi-v71,kvm : : : : 00:0c:29:e3:2c:d7
+HOST : 192.168.0.193 : fedora-test : : : : 52:54:00:6a:de:19
+#HOST : 192.168.0.194 : esxi-v74,grafana : : : : 00:0c:29:35:45:fe
+HOST : 192.168.0.194 : esxi-v74,grafana : : : : 52:54:00:33:74:79
+#HOST : 192.168.0.195 : esxi-v75,webhost : : : : 00:0c:29:e5:57:87
+HOST : 192.168.0.195 : esxi-v75,webhost : : : : 52:54:00:47:20:81
+HOST : 192.168.0.197 : hast-a : : : : 00:0c:29:cb:c7:69
+HOST : 192.168.0.198 : hast-b : : : : 00:0c:29:8f:58:eb
+HOST : 192.168.0.199 : hast-v : : : :
+HOST : 192.168.0.200 : sw01 : : : :
+HOST : 192.168.0.201 : sw02 : : : :
+HOST : 192.168.0.202 : dhcp2 : : : :
+HOST : 192.168.0.203 : dhcp3 : : : :
+HOST : 192.168.0.204 : dhcp4 : : : :
+HOST : 192.168.0.205 : dhcp5 : : : :
+HOST : 192.168.0.206 : dhcp6 : : : :
+HOST : 192.168.0.207 : dhcp7 : : : :
+HOST : 192.168.0.208 : dhcp8 : : : :
+HOST : 192.168.0.209 : dhcp9 : : : :
+HOST : 192.168.0.210 : dhcp10 : : : :
+HOST : 192.168.0.211 : dhcp11 : : : :
+HOST : 192.168.0.212 : dhcp12 : : : :
+HOST : 192.168.0.213 : dhcp13 : : : :
+HOST : 192.168.0.214 : dhcp14 : : : :
+HOST : 192.168.0.215 : dhcp15 : : : :
+HOST : 192.168.0.216 : dhcp16 : : : :
+HOST : 192.168.0.217 : dhcp17 : : : :
+HOST : 192.168.0.218 : dhcp18 : : : :
+HOST : 192.168.0.219 : dhcp19 : : : :
+HOST : 192.168.0.220 : dhcp20 : : : :
+HOST : 192.168.0.221 : fw-carp-a : : : :
+HOST : 192.168.0.222 : fw-carp-b : : : :
+HOST : 192.168.0.225 : kali-linux : : : : 00:0c:29:0f:5e:36
+HOST : 192.168.0.227 : farist01 : : : :
+HOST : 192.168.0.247 : fw-carp : : : :
+HOST : 192.168.0.248 : fw01 : : : :
+HOST : 192.168.0.249 : esxi-v48 : : : : 
+HOST : 192.168.0.250 : ovp-proxy-server : : : : 00:0c:29:16:37:39 
+HOST : 192.168.0.253 : farist,dustball-v25,fw-vbox,faristen,fw : : : : 08:00:27:9e:4c:29
+HOST : 192.168.0.254 : rutger-re0 : : : : 
+HOST : 192.168.10.1 : rutger-re2 : : : :
+HOST : 192.168.10.2 : esxi-v51-em2 : : : : 00:0c:29:ed:54:d2
+HOST : 192.168.10.252 : esxi-v51-em2 : : : :
+HOST : 192.168.10.253 : rutger-re2 : : : :
+HOST : 192.168.56.254 : fw-vbox-vboxnet0 : : : : 08:00:27:5c:2d:74
+#HOST : 192.168.56.40 : dustball-v20,appgate-vm : : : :
+HOST : 192.168.56.40 : esxi-v20,appgate-vm : : : :
+#HOST : 192.168.56.50 : esxi-v30 : : : : 00:0c:29:eb:c5:10
+HOST : 192.168.56.50 : esxi-v30 : : : : 52:54:00:5d:c7:ca
+HOST : 192.168.56.69 : esxi-v49 : : : : 00:0c:29:74:c0:41
+HOST : 192.168.56.201 : dmz-server : : : :
+HOST : 192.168.56.221 : fw-carp-a-vboxnet0 : : : :
+HOST : 192.168.56.222 : fw-carp-b-vboxnet0 : : : :
+HOST : 192.168.56.253 : fw-carp-vboxnet0 : : : :
+HOST : 192.168.57.201 : ovp-desktop-client : : : : 00:0c:29:ec:fb:09
+HOST : 192.168.57.252 : farist03 : : : : 00:0c:29:f2:f1:d2
+HOST : 192.168.57.253 : farist02 : : : : 00:0c:29:db:1f:b7
+HOST : 192.168.57.254 : fw-vbox-vboxnet1 : : : : 08:00:27:02:da:52
+HOST : 192.168.65.53 : kvm-v3-nfs : : : :
+HOST : 192.168.65.172 : esxi-v52-nfs : : : :
+HOST : 192.168.65.68 : kvm-v18-nfs : : : :
+HOST : 192.168.65.73 : kvm-v23-nfs : : : :
+HOST : 192.168.65.110 : truenas-nfs : : : : 52:54:00:17:b1:98
+HOST : 192.168.100.2 : dustball-iscsi : : : :
+HOST : 192.168.100.7 : coolmaster-iscsi : : : :
+HOST : 192.168.100.12 : fractal-iscsi : : : :
+HOST : 192.168.100.13 : nasse-iscsi : : : : 68:05:ca:04:dc:14
+HOST : 192.168.100.15 : esxi-iscsi : : : : 68:05:ca:05:0e:fd
+HOST : 192.168.100.19 : esxi2-iscsi : : : : 00:50:56:6b:35:6d
+HOST : 192.168.100.23 : esxi03-iscsi : : : :
+HOST : 192.168.100.26 : esxi04-iscsi : : : :
+HOST : 192.168.100.101 : freenasse-iscsi : : : :
+HOST : 192.168.100.110 : truenas-iscsi : : : :
+HOST : 192.168.100.197 : hast-a-carp : : : :
+HOST : 192.168.100.198 : hast-b-carp : : : :
+HOST : 192.168.100.199 : hast-v-carp : : : :
+DOMAIN : s2.strahlert.net
+HOST : 192.168.20.20 : freenas : : : :
+HOST : 192.168.20.254 : fw02,ntp1 : : : :
+HOST : 192.168.20.13 : strmag-nfs01 : : : :
+HOST : 192.168.20.19 : esxi02 : : : :
+HOST : 192.168.20.26 : esxi04 : : : :
+HOST : 192.168.20.2 : dustball : : : :
+HOST : 192.168.20.30 : crochet-vm : : : :
+HOST : 192.168.20.31 : rb01 : : : :
+HOST : 192.168.20.33 : kvm04 : : : :
+#HOST : 192.168.20.101 : freenasse,freenasse.home.strahlert.net. : : : :
+HOST : 192.168.20.101 : freenasse : : : :
+#HOST : 192.168.20.102 : bacula : : : :
+HOST : 192.168.20.103 : gluster-b : : : : 00:0c:29:71:23:56
+HOST : 192.168.20.105 : bareos,bacula : : : : 

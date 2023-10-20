@@ -1,0 +1,75 @@
+#!/bin/sh
+
+#echo "Generating dhcpd.conf"
+
+cat << EOF
+#ddns-update-style ad-hoc;
+authoritative;
+
+option domain-name "home.strahlert.net";
+option domain-search "home.strahlert.net", "s2.strahlert.net", "docker", "vsphere";
+option domain-name-servers 192.168.0.136, 192.168.0.146;
+
+option subnet-mask 255.255.255.0;
+#option routers 192.168.0.1;
+
+log-facility local7;
+
+subnet 192.168.0.0 netmask 255.255.255.0 {
+  range 192.168.0.201 192.168.0.220;
+  option routers 192.168.0.248;
+  max-lease-time 86400;
+  deny unknown-clients;
+}
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  option routers 192.168.1.253;
+  max-lease-time 86400;
+  deny unknown-clients;
+}
+
+subnet 192.168.2.0 netmask 255.255.255.0 {
+  option routers 192.168.2.252;
+  max-lease-time 86400;
+  allow unknown-clients;
+
+  range 192.168.2.17 192.168.2.29;
+}
+
+subnet 192.168.56.0 netmask 255.255.255.0 {
+  option routers 192.168.56.254;
+  max-lease-time 86400;
+  allow unknown-clients;
+}
+
+subnet 192.168.57.0 netmask 255.255.255.0 {
+  option routers 192.168.57.254;
+  max-lease-time 86400;
+  allow unknown-clients;
+}
+EOF
+
+while IFS=: read host iaddr name mtype os protocol comment; do
+  # Trim whitespaces
+  host=`echo $host|awk '{printf "%s\n", $1}'` 
+  iaddr=`echo $iaddr|awk '{printf "%s\n", $1}'`
+  name=`echo $name|awk '{printf "%s\n", $1}'`
+  mtype=`echo $mtype|awk '{printf "%s\n", $1}'`
+  os=`echo $os|awk '{printf "%s\n", $1}'`
+  protocol=`echo $protocol|awk '{printf "%s\n", $1}'`
+  comment=`echo $comment|awk '{printf "%s\n", $1}'`
+
+  # If first field isn't DOMAIN or HOST then there's an error
+  # in the indata on that line, perhaps a comment.
+  if [ $host = "DOMAIN" ]; then
+    fcheck=0
+    dname=${iaddr}
+  elif [ $host = "HOST" ]; then
+    if [ -z "${comment}" ]; then
+      continue
+    fi
+
+    name=`echo ${name}|cut -d ',' -f1`
+    echo "host ${name} { hardware ethernet ${comment}; fixed-address ${iaddr}; option domain-name \"${dname}\"; }"
+  fi
+done < /root/HOSTS.TXT

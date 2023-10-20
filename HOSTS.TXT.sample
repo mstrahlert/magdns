@@ -1,0 +1,30 @@
+# Configfile for make-namedb.sh
+#
+# 21/03/2010: magnus@strahlert.net
+#             first draft
+# 25/03/2010: magnus@strahlert.net
+#             final version
+#
+#
+# Line starting with DOMAIN will define the domainname for the hosts
+# on the following lines until another DOMAIN definition is found
+#
+# Line starting with HOST willdefine a host for the given domain.
+# Arguments takes the following form; 
+#  <iaddr> : <name> : <mtype> : <os> : <protocol> :
+#
+# <iaddr>    contains the IP adress
+# <name>     contains the hostname. This can be comma separated in 
+#            order to create CNAMES. The first given name will be
+#            the A name and the remainder the CNAMES.
+# <mtype>    the first entry of HNAME. Usually hardware. If none is
+#            given, it will be set to UNKNOWN.
+# <os>       the second entry of HNAME. Usually software. If none
+#            is given, it will be set to UNKNOWN.
+# <protocol> not used
+#
+DOMAIN : domain
+HOST : 10.0.0.1: hostname : : : :
+DOMAIN : otherdomain
+HOST : 10.0.1.1: otherhostname,cname : : : : 00:0c:de:ad:be:ef
+HOST : 10.0.1.2: otherotherhostname,cname1,cname2 : : : : 52:54:de:ad:be:ef
